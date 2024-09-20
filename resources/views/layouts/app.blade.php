@@ -8,7 +8,8 @@
     <title>@yield('title', 'Home')</title>
 
     {{-- FontAwesome --}}
-    <script src="https://kit.fontawesome.com/e3b4af92a1.js" crossorigin="anonymous"></script>
+    {{-- <script src="https://kit.fontawesome.com/e3b4af92a1.js" crossorigin="anonymous"></script> --}}
+    <link rel="stylesheet" href="{{ asset('fontawesome/css/all.min.css') }}">
 
     {{-- Bootstrap 5 --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -59,6 +60,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
     </script>
+
+    {{-- FontAwesome js --}}
+    <script src="{{ asset('fontawesome/js/all.min.js') }}" defer></script>
     {{-- js global --}}
     <script src="{{ asset('js/script-global.js') }}"></script>
     {{-- js custom page --}}
