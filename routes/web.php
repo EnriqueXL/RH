@@ -3,10 +3,10 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\EmployeController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'home'])->name('home');
+Route::get('/home', [ HomeController::class, 'home'])->name('home');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -18,7 +18,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-//Solo tiene una funcion, por lo que se puede llamar directamente en la ruta
-Route::get('/home', HomeController::class)->name('home');
+//Ruta de todos los empleados
+Route::get('/employes', [EmployeController::class, 'index'])->name('employes.index');
 
 require __DIR__.'/auth.php';

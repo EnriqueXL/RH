@@ -5,7 +5,7 @@
             <i class="fas fa-bars"></i>
         </button>
         <div class="sidebar-logo ms-2">
-            <a href="#">CodzSword</a>
+            <a href="{{ route('home') }}">MicroTec</a>
         </div>
     </div>
     <ul class="sidebar-nav list-unstyled">
@@ -15,7 +15,7 @@
             </a>
             <ul id="empleados" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link"><i class="fas fa-user-friends icon"></i><span class="label-sub">Todos los empleados</span></a>
+                    <a href="{{ route('employes.index') }}" class="sidebar-link"><i class="fas fa-user-friends icon"></i><span class="label-sub">Todos los empleados</span></a>
                 </li>
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link"><i class="fas fa-user-friends icon"></i><span class="label-sub">Registrar</span></a>
