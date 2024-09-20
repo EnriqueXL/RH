@@ -14,7 +14,8 @@
     <script src="https://kit.fontawesome.com/e3b4af92a1.js" crossorigin="anonymous"></script>
 
     {{-- Bootstrap 5 --}}
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 
     {{-- css custom global --}}
     <link rel="stylesheet" href="{{ asset('css/style-global.css') }}">
@@ -28,89 +29,14 @@
 
     <div class="container-fluid">
         <div class="row">
+            
             <!-- Sidebar -->
-            <aside id="sidebar" class="col-2 p-0">
-                <div class="d-flex align-items-center">
-                    <button class="toggle-btn" type="button">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                    <div class="sidebar-logo ms-2">
-                        <a href="#">CodzSword</a>
-                    </div>
-                </div>
-                <ul class="sidebar-nav list-unstyled">
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse" data-bs-target="#empleados" aria-expanded="false" aria-controls="empleados">
-                            <i class="fas fa-user-friends icon"></i><span class="label">Empleados</span>
-                        </a>
-                        <ul id="empleados" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link"><i class="fas fa-user-friends icon"></i><span class="label-sub">Todos los empleados</span></a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link"><i class="fas fa-user-friends icon"></i><span class="label-sub">Registrar</span></a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link">
-                            <i class="fas fa-tasks"></i><span>Task</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse" data-bs-target="#auth" aria-expanded="false" aria-controls="auth">
-                            <i class="fas fa-shield-alt"></i><span>Auth</span>
-                        </a>
-                        <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Login</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Register</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse" data-bs-target="#multi" aria-expanded="false" aria-controls="multi">
-                            <i class="fas fa-layer-group"></i><span>Multi Level</span>
-                        </a>
-                        <ul id="multi" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#multi-two" aria-expanded="false" aria-controls="multi-two">
-                                    Two Links
-                                </a>
-                                <ul id="multi-two" class="sidebar-dropdown list-unstyled collapse">
-                                    <li class="sidebar-item">
-                                        <a href="#" class="sidebar-link">Link 1</a>
-                                    </li>
-                                    <li class="sidebar-item">
-                                        <a href="#" class="sidebar-link">Link 2</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link">
-                            <i class="fas fa-bell"></i><span>Notification</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link">
-                            <i class="fas fa-cog"></i><span>Setting</span>
-                        </a>
-                    </li>
-                </ul>
-                <div class="sidebar-footer">
-                    <a href="#" class="sidebar-link">
-                        <i class="fas fa-sign-out-alt"></i><span>Logout</span>
-                    </a>
-                </div>
-            </aside>
+            @include('layouts.sidebar')
+
             <!-- Main content -->
             <div class="col p-3 main">
                 <div class="text-center">
-                    <h1>Sidebar Bootstrap 5</h1>
+                    <h1>Microtec</h1>
                 </div>
             </div>
         </div>
@@ -119,6 +45,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     {{-- js global --}}
     <script src="{{ asset('js/script-global.js') }}"></script>
+    {{-- js custom page --}}
+    @yield('js')
 
 </body>
 
