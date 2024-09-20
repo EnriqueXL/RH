@@ -31,7 +31,7 @@
             @include('layouts.sidebar')
 
             <!-- Main content -->
-            <div class="col p-3 main">
+            <div class="col p-5 main">
 
                 <!-- nav -->
                     {{-- <nav class="navbar navbar-light bg-light">
@@ -49,9 +49,9 @@
                         </div>
                     </nav> --}}
                 <!-- end nav -->
-                <div class="">
+                {{-- <div class=""> --}}
                     @yield('content')
-                </div>
+                {{-- </div> --}}
             </div>
         </div>
     </div>

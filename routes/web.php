@@ -16,4 +16,7 @@ Route::middleware('auth')->group(function () {
 //Ruta de todos los empleados
 Route::get('/employes', [EmployeController::class, 'index'])->name('employes.index');
 
+//Registrar empleados
+Route::get('/employes/create', [EmployeController::class, 'create'])->name('employes.create');
+
 require __DIR__.'/auth.php';

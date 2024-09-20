@@ -18,7 +18,7 @@
                     <a href="{{ route('employes.index') }}" class="sidebar-link"><i class="fas fa-user-friends icon"></i><span class="label-sub">Todos los empleados</span></a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link"><i class="fas fa-user-friends icon"></i><span class="label-sub">Registrar</span></a>
+                    <a href="{{ route('employes.create') }}" class="sidebar-link"><i class="fas fa-user-friends icon"></i><span class="label-sub">Registrar</span></a>
                 </li>
             </ul>
         </li>
