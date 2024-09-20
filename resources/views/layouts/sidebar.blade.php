@@ -5,7 +5,7 @@
             <i class="fas fa-bars"></i>
         </button>
         <div class="sidebar-logo ms-2">
-            <a href="{{ route('home') }}">MicroTec</a>
+            <a href="{{ route('/') }}">MicroTec</a>
         </div>
     </div>
     <ul class="sidebar-nav list-unstyled">

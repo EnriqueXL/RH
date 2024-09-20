@@ -9,11 +9,13 @@ class HomeController extends Controller
 
     public function __construct()
     {
+        // Todas las rutas que usan este controlador requerirán autenticación
         $this->middleware('auth');
     }
 
-    // llamando a la vista home, sustituyendo la funcion a __invoke. Solo consta de una sola funcion.
-    public function home(){
+    // Este controlador será invocable
+    public function __invoke()
+    {
         return view('home');
     }
 }
