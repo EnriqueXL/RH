@@ -17,23 +17,37 @@ h1 {
 
 .wrapper {
     display: flex;
+    min-height: 100vh;
 }
 
+/* Main Content */
 .main {
-    min-height: 100vh;
     width: 100%;
-    overflow: hidden;
-    transition: all 0.35s ease-in-out;
     background-color: #F3F4F6; /* Gris Claro */
+    transition: all 0.35s ease-in-out;
+}
+
+.container-fluid {
+    padding: 2rem;
 }
 
 /* Sidebar */
+/* #sidebar {
+    width: 70px;
+    transition: all 0.25s ease-in-out;
+    background-color: #0e2238; 
+    display: flex;
+    flex-direction: column;
+} */
+
 #sidebar {
     width: 70px;
-    transition: all .25s ease-in-out;
+    transition: all 0.25s ease-in-out;
     background-color: #0e2238; /* Azul Oscuro */
     display: flex;
     flex-direction: column;
+    border-radius: 0px 10px 10px; /* Bordes redondeados */
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de elevación */
 }
 
 #sidebar.expand {
@@ -113,4 +127,17 @@ a.sidebar-link:hover {
 /* Rotar flecha en colapso */
 .sidebar-link.collapsed::after {
     transform: rotate(-90deg);
+}
+
+/* Navbar */
+.navbar {
+    background-color: white;
+    color: black;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    /* border-radius: 10px;  */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }

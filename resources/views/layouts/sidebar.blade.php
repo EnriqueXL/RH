@@ -1,5 +1,6 @@
  <!-- Sidebar -->
  <aside id="sidebar" class="col-2 p-0">
+    
     <div class="d-flex align-items-center">
         <button class="toggle-btn" type="button">
             <i class="fas fa-bars"></i>
