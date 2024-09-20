@@ -1,4 +1,4 @@
-/* Estilos básicos y reset */
+/* Reset y estilos básicos */
 ::after,
 ::before,
 a,
@@ -96,31 +96,34 @@ a.sidebar-link:hover {
     border-left: 3px solid #3b7ddd;
 }
 
+/* Submenú dentro del sidebar */
 .sidebar-item {
     position: relative;
 }
 
-/* Evitar despliegue automático del submenú en modo colapsado */
-#sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
-    position: absolute;
-    top: 0;
-    left: 260px; /* Asegura que el menú no aparezca fuera del área */
-    background-color: #0e2238;
-    padding: 0;
-    min-width: 15rem;
-    display: none;
-    z-index: 999; /* Evitar superposición no deseada */
+.sidebar-item .sidebar-dropdown {
+    padding-left: 1.5rem;
 }
 
-/* Solo desplegar el submenú cuando el sidebar esté expandido */
-#sidebar.expand .sidebar-item:hover .has-dropdown + .sidebar-dropdown {
+.sidebar-dropdown a {
+    font-size: 0.85rem;
+}
+
+.sidebar-item .sidebar-dropdown .sidebar-link {
+    border-left: none;
+}
+
+/* Ajustar la velocidad de la transición del dropdown */
+.collapse {
+    transition: height 0.2s ease !important;
+}
+
+/* Submenús visibles solo al hacer clic */
+#sidebar .collapse.show {
     display: block;
-    max-height: 15em;
-    width: 100%;
-    opacity: 1;
 }
 
-/* Flecha para indicar submenús */
+/* Flecha que cambia de dirección al abrir submenú */
 #sidebar.expand .sidebar-link[data-bs-toggle="collapse"]::after {
     border: solid;
     border-width: 0 .075rem .075rem 0;
