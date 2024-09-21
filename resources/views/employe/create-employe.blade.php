@@ -12,7 +12,11 @@
             font-size: 0.875rem;
             margin-top: 0.25rem;
         }
-        
+
+        /* Ocultar el formulario inicialmente */
+        /* #employee-form {
+            display: none;
+        } */
     </style>
 @endsection
 
@@ -20,7 +24,29 @@
 
 @section('content')
 
-    {{-- <form action="{{ route('employe.store') }}" method="POST" enctype="multipart/form-data"> --}}
+    <!-- Modal -->
+    <div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="uploadModalLabel">Subir Archivo RAR</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="upload-form" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="rar-file" class="form-label">Seleccione un archivo RAR para extraer los datos con IA.</label>
+                            <input type="file" class="form-control" id="rar-file" name="rar-file" accept=".rar" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Subir</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Formulario de empleado -->
+    <div id="employee-form">
         <form action="" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="row">
@@ -110,18 +136,30 @@
             </div>
             <div class="row mt-3">
                 <div class="col-md-12 d-flex justify-content-end">
-                    <a type="submit" class="btn btn-primary me-2">Enviar</a>
-                 
+                    <button type="submit" class="btn btn-primary me-2">Enviar</button>
                     <a href="{{ route('home') }}" class="btn btn-light">Cancelar</a>
                 </div>
             </div>
         </form>
-
+    </div>
 
 @endsection
 
 @section('js')
     <script>
-        //custom ks
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mostrar el modal al cargar la página
+            var uploadModal = new bootstrap.Modal(document.getElementById('uploadModal'));
+            uploadModal.show();
+
+            // Manejar el envío del formulario de subida
+            document.getElementById('upload-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                // lógica para procesar el archivo RAR
+                // ocultar el modal y mostramos el formulario
+                uploadModal.hide();
+                document.getElementById('employee-form').style.display = 'block';
+            });
+        });
     </script>
 @endsection
