@@ -1,6 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Employe;
+
+//Temporal al orm
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
@@ -13,11 +17,33 @@ class EmployeController extends Controller
     }
 
     // Método para obtener todos los empleados
-    public function index()
+    public function index(Request $request)
     {
-        // Retorna la vista de todos los empleados
-        return view('employe.all-employe');
+        $search = $request->input('search');
+        
+        $query = Employe::query();
+    
+        if ($search) {
+            $query->where('name', 'like', '%' . $search . '%')
+                  ->orWhere('email', 'like', '%' . $search . '%');
+        }
+    
+        $users = $query->paginate(10);
+    
+        // Respuesta para AJAX (solo la tabla con paginación)
+        if ($request->ajax()) {
+            return response()->json([
+                'html' => view('employe.all-employe', compact('users', 'search'))->renderSections()['usersTable'],
+                'pagination' => view('employe.all-employe', compact('users', 'search'))->renderSections()['pagination'],
+            ]);
+        }
+    
+        // Respuesta para la carga normal de la página completa
+        return view('employe.all-employe', compact('users', 'search'));
     }
+    
+    
+    
 
     // Método para crear un nuevo empleado
     public function create()
