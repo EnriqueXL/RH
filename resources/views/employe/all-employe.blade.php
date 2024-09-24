@@ -15,14 +15,14 @@
 
 @section('content')
 <div class="table-responsive">
-    <table class="table table-striped table-hover table-sm" id="allUsersTable">
+    <table class="table table-striped table-hover table-sm text-center" id="allUsersTable">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Nombre</th>
-                <th>Email</th>
-                <th>Created at</th>
-                <th>Acciones</th>
+                <th class="text-center">Folio</th>
+                <th class="text-center">Nombre</th>
+                <th class="text-center">Email</th>
+                <th class="text-center">Created at</th>
+                <th class="text-center">Acciones</th>
             </tr>
         </thead>
     </table>

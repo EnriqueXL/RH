@@ -146,6 +146,28 @@ a.sidebar-link:hover {
     color: #0e2238; /* Azul Medio */
     margin-bottom: 1rem;
 }
+
+.pagination {
+    color: #0e2238; /* Azul Medio */
+  
+}
+
+.pagination .page-item .page-link {
+    color: #0e2238; /* Azul Medio */
+    font-size: small;
+  
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #0e2238; /* Azul Medio */
+    border-color: #0e2238; /* Azul Medio */
+    color: white;
+}
+
+.pagination .page-item.disabled .page-link {
+    color: #cccccc; /* Gris Claro */
+    border-color: #cccccc; /* Gris Claro */
+}
 /* media query para el navbar */
 /* @media (max-width: 768px) {
    
