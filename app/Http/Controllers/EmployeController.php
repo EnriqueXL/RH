@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Employe;
+use Yajra\DataTables\Contracts\DataTable;
 
 class EmployeController extends Controller
 {
@@ -13,8 +15,20 @@ class EmployeController extends Controller
     }
 
     // Método para obtener todos los empleados
-    public function index()
+    public function index(Request $request)
     {
+        if ($request->ajax()) {
+            $users = Employe::select('*');
+            return datatables()->of($users)
+                ->addColumn('acciones', function ($row) {
+                    return '
+                        <a href="/employes/${row.id}/edit" class="btn btn-sm"><i class="fas fa-edit"></i></a>
+                        <button class="btn btn-sm" onclick="deleteEmploye(${row.id})"><i class="fas fa-trash-alt"></i></button>
+                    ';
+                })
+                ->rawColumns(['acciones'])
+                ->make(true);
+        }
         // Retorna la vista de todos los empleados
         return view('employe.all-employe');
     }
