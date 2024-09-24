@@ -141,3 +141,17 @@ a.sidebar-link:hover {
     /* border-radius: 10px;  */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
+.navbar-brand i{
+    font-size: 1rem;
+    color: #0e2238; /* Azul Medio */
+    margin-bottom: 1rem;
+}
+/* media query para el navbar */
+/* @media (max-width: 768px) {
+   
+
+    .navbar-brand i {
+        font-size: 1rem;
+        
+    }
+} */

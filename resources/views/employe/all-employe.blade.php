@@ -1,56 +1,76 @@
 @extends('layouts.app')
 
+@section('css-datatables')
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.7/css/dataTables.bootstrap5.css">
+@endsection
+
 @section('css')
     <style>
-        /* css custom page */
+        /* CSS custom page */
     </style>
 @endsection
 
 @section('title', 'Listado de empleados')
 
 @section('content')
+<div class="table-responsive">
+    <table class="table table-striped table-hover table-sm" id="allUsersTable">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Created at</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+@endsection
 
-    <div>
+@section('js-datatables')
 
-        <table class="table caption-top">
-            <caption>List of users</caption>
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </table>
-
-    </div>
-
+    <script src="https://cdn.datatables.net/2.1.7/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.1.7/js/dataTables.bootstrap5.js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/2.1.7/i18n/es-MX.json"></script>
 
 @endsection
 
 @section('js')
     <script>
-        //    alert('Home App');
+        $(document).ready(function() {
+        $('#allUsersTable').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: '{{ route('employes.index') }}',
+            columns: [
+                { data: 'id', name: 'id' },
+                { data: 'name', name: 'name' },
+                { data: 'email', name: 'email' },
+                { data: 'created_at', name: 'created_at' },
+                {
+                    data: 'acciones',
+                    name: 'acciones',
+                    orderable: false,
+                    searchable: false,
+                    render: function(data, type, row) {
+                        return data;
+                    }
+                }
+            ],
+            language: {
+                url: 'https://cdn.datatables.net/plug-ins/2.1.7/i18n/es-MX.json'
+            },
+            pagingType: 'full_numbers'
+        });
+    });
+
+    function deleteEmploye(id) {
+        if (confirm('¿Estás seguro de que deseas eliminar este empleado?')) {
+            // Lógica para eliminar el empleado
+            console.log('Eliminar empleado con ID:', id);
+        }
+    }
     </script>
 @endsection
