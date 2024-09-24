@@ -61,8 +61,7 @@
             ],
             language: {
                 url: 'https://cdn.datatables.net/plug-ins/2.1.7/i18n/es-MX.json'
-            },
-            pagingType: 'full_numbers'
+            }
         });
     });
 
