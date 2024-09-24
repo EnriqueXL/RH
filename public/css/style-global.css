@@ -126,6 +126,31 @@ a.sidebar-link:hover {
 .sidebar-link.collapsed::after {
     transform: rotate(-90deg);
 }
+/* Dropdown al pasar el mouse */
+.sidebar-item {
+    position: relative;
+}
+
+#sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
+    position: absolute;
+    top: 0;
+    left: 70px;
+    background-color: #0e2238;
+    padding: 0;
+    min-width: 15rem;
+    display: none;
+    z-index: 1050; /* Asegura que el dropdown se muestra por encima del contenido */
+}
+
+#sidebar:not(.expand) .sidebar-item:hover .has-dropdown+.sidebar-dropdown {
+    display: block;
+    max-height: 15em;
+    width: 100%;
+    opacity: 1;
+    z-index: 1050; /* Asegura que el dropdown se muestra por encima del contenido */
+}
+
+
 
 /* Navbar */
 .navbar {
@@ -136,7 +161,6 @@ a.sidebar-link:hover {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    /* border-radius: 10px;  */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
@@ -165,10 +189,3 @@ a.sidebar-link:hover {
     color: #cccccc; /* Gris Claro */
     border-color: #cccccc; /* Gris Claro */
 }
-
-/* media query para el navbar */
-/* @media (max-width: 768px) {
-    .navbar-brand i {
-        font-size: 1rem;
-    }
-} */

@@ -51,11 +51,11 @@
 
             <!-- Page content -->
             <div class="container-fluid">
-                {{-- <div class="card shadow-sm"> --}}
+                <div class="card shadow-sm">
                     <div class="card-body">
                         @yield('content')
                     </div>
-                {{-- </div> --}}
+                </div>
             </div>
         </div>
     </div>

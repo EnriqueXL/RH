@@ -1,5 +1,5 @@
  <!-- Sidebar -->
- <aside id="sidebar" class="col-2 p-0">
+ <aside id="sidebar" class="col-2 p-0 expand">
     
     <div class="d-flex align-items-center">
         <button class="toggle-btn" type="button">
@@ -18,10 +18,13 @@
             </a>
             <ul id="empleados" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                 <li class="sidebar-item">
-                    <a href="{{ route('employes.index') }}" class="sidebar-link"><i class="fas fa-user-friends icon"></i><span class="label-sub">Todos los empleados</span></a>
+                    <a href="{{ route('employes.index') }}" class="sidebar-link">Todos los empleados</a>
+                    {{-- <i class="fas fa-user-friends icon"></i> --}}
                 </li>
+            
                 <li class="sidebar-item">
-                    <a href="{{ route('employes.create') }}" class="sidebar-link"><i class="fas fa-user-friends icon"></i><span class="label-sub">Registrar</span></a>
+                    <a href="{{ route('employes.create') }}" class="sidebar-link">Registrar</a>
+                    {{-- <i class="fas fa-user-friends icon"></i> --}}
                 </li>
             </ul>
         </li>
