@@ -67,14 +67,6 @@
 
 @section('content')
 
-    <div class="description m-2 text-center">
-        <h1>Microtecologias Móviles</h1>
-        <p>
-            <strong>Micro-tec</strong> es una aplicación web que permite gestionar la información de los empleados de una
-            empresa.
-        </p>
-    </div>
-
     <div class="container mt-4">
         <div class="row">
             <!-- Card 1: Total de Empleados -->
