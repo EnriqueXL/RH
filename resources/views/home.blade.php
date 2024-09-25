@@ -68,9 +68,9 @@
 @section('content')
 
     <div class="description m-2 text-center">
-        <h1>Micro CRM</h1>
+        <h1>Microtecologias Móviles</h1>
         <p>
-            <strong>Micro CRM</strong> es una aplicación web que permite gestionar la información de los empleados de una
+            <strong>Micro-tec</strong> es una aplicación web que permite gestionar la información de los empleados de una
             empresa.
         </p>
     </div>

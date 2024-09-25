@@ -23,7 +23,7 @@ h1 {
 /* Main Content */
 .main {
     width: 100%;
-    background-color: #F3F4F6; /* Gris Claro */
+    background-color: #f9fafb; /* Gris muy claro */
     transition: all 0.35s ease-in-out;
 }
 
@@ -35,7 +35,7 @@ h1 {
 #sidebar {
     width: 70px;
     transition: all 0.25s ease-in-out;
-    background-color: #0e2238; /* Azul Oscuro */
+    background-color: #f0f4f8; /* Azul muy claro */
     display: flex;
     flex-direction: column;
     border-radius: 0px 10px 10px; /* Bordes redondeados */
@@ -56,11 +56,11 @@ h1 {
 
 .toggle-btn i {
     font-size: 1.5rem;
-    color: #93C5FD; /* Azul Claro */
+    color: #333333; /* Gris oscuro */
 }
 
 .sidebar-logo a {
-    color: #FFFFFF; /* Blanco */
+    color: #333333; /* Gris oscuro */
     font-size: 1.15rem;
     font-weight: 600;
 }
@@ -89,7 +89,7 @@ h1 {
 
 a.sidebar-link {
     padding: .625rem 1.625rem;
-    color: #F3F4F6; /* Gris Claro */
+    color: #333333; /* Gris oscuro */
     display: flex;
     align-items: center;
     font-size: 0.9rem;
@@ -109,8 +109,8 @@ a.sidebar-link {
 
 /* Efecto hover */
 a.sidebar-link:hover {
-    background-color: rgba(255, 255, 255, .075);
-    border-left: 3px solid #3B82F6; /* Azul Medio */
+    background-color: #e0e7ef; /* Azul claro */
+    border-left: 3px solid #3b7ddd; /* Azul medio */
 }
 
 /* Flecha de dropdown */
@@ -118,7 +118,7 @@ a.sidebar-link:hover {
     content: "▾";
     font-size: 1rem;
     margin-left: auto;
-    color: #93C5FD; /* Azul Claro */
+    color: #333333; /* Gris oscuro */
     transition: transform 0.3s ease;
 }
 
@@ -126,6 +126,7 @@ a.sidebar-link:hover {
 .sidebar-link.collapsed::after {
     transform: rotate(-90deg);
 }
+
 /* Dropdown al pasar el mouse */
 .sidebar-item {
     position: relative;
@@ -135,7 +136,7 @@ a.sidebar-link:hover {
     position: absolute;
     top: 0;
     left: 70px;
-    background-color: #0e2238;
+    background-color: #f0f4f8; /* Azul muy claro */
     padding: 0;
     min-width: 15rem;
     display: none;
@@ -150,12 +151,10 @@ a.sidebar-link:hover {
     z-index: 1050; /* Asegura que el dropdown se muestra por encima del contenido */
 }
 
-
-
 /* Navbar */
 .navbar {
-    background-color: white;
-    color: black;
+    background-color: #F0F4F8; /* Blanco */
+    color: #333333; /* Gris oscuro */
     padding: 1rem;
     display: flex;
     justify-content: space-between;
@@ -166,22 +165,22 @@ a.sidebar-link:hover {
 
 .navbar-brand i {
     font-size: 1rem;
-    color: #0e2238; /* Azul Medio */
+    color: #333333; /* Gris oscuro */
     margin-bottom: 1rem;
 }
 
 .pagination {
-    color: #0e2238; /* Azul Medio */
+    color: #333333; /* Gris oscuro */
 }
 
 .pagination .page-item .page-link {
-    color: #0e2238; /* Azul Medio */
+    color: #333333; /* Gris oscuro */
     font-size: small;
 }
 
 .pagination .page-item.active .page-link {
-    background-color: #0e2238; /* Azul Medio */
-    border-color: #0e2238; /* Azul Medio */
+    background-color: #3b7ddd; /* Azul medio */
+    border-color: #3b7ddd; /* Azul medio */
     color: white;
 }
 
