@@ -7,9 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Home')</title>
 
-    {{-- LineIcons --}}
-    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
-
     {{-- FontAwesome --}}
     <script src="https://kit.fontawesome.com/e3b4af92a1.js" crossorigin="anonymous"></script>
 
@@ -53,8 +50,12 @@
             <!-- end nav -->
 
             <!-- Page content -->
-            <div class="container-fluid px-3">
-                @yield('content')
+            <div class="container-fluid">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        @yield('content')
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -66,7 +67,7 @@
 
     {{-- jQuery --}}
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    
+
     {{-- JS global --}}
     <script src="{{ asset('js/script-global.js') }}"></script>
 

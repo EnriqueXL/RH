@@ -1,12 +1,14 @@
  <!-- Sidebar -->
- <aside id="sidebar" class="col-2 p-0">
+ <aside id="sidebar" class="col-2 p-0 expand">
     
     <div class="d-flex align-items-center">
         <button class="toggle-btn" type="button">
             <i class="fas fa-bars"></i>
         </button>
-        <div class="sidebar-logo ms-2">
-            <a href="{{ route('home') }}">MicroTec</a>
+        <div class="sidebar-logo">
+            <a href="{{ route('home') }}">
+                <img src="{{ asset('img/logos/mic.png') }}" alt="MicroTec" class="sidebar-logo-img">
+            </a>
         </div>
     </div>
     <ul class="sidebar-nav list-unstyled">
@@ -16,10 +18,13 @@
             </a>
             <ul id="empleados" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                 <li class="sidebar-item">
-                    <a href="{{ route('employes.index') }}" class="sidebar-link"><i class="fas fa-user-friends icon"></i><span class="label-sub">Todos los empleados</span></a>
+                    <a href="{{ route('employes.index') }}" class="sidebar-link">Todos los empleados</a>
+                    {{-- <i class="fas fa-user-friends icon"></i> --}}
                 </li>
+            
                 <li class="sidebar-item">
-                    <a href="{{ route('employes.create') }}" class="sidebar-link"><i class="fas fa-user-friends icon"></i><span class="label-sub">Registrar</span></a>
+                    <a href="{{ route('employes.create') }}" class="sidebar-link">Registrar</a>
+                    {{-- <i class="fas fa-user-friends icon"></i> --}}
                 </li>
             </ul>
         </li>
