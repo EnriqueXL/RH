@@ -15,8 +15,8 @@
 
         /* Ocultar el formulario inicialmente */
         /* #employee-form {
-            display: none;
-        } */
+                display: none;
+            } */
     </style>
 @endsection
 
@@ -35,8 +35,10 @@
                 <div class="modal-body">
                     <form id="upload-form" enctype="multipart/form-data">
                         <div class="mb-3">
-                            <label for="rar-file" class="form-label">Seleccione un archivo RAR para extraer los datos con IA.</label>
-                            <input type="file" class="form-control" id="rar-file" name="rar-file" accept=".rar" required>
+                            <label for="rar-file" class="form-label">Seleccione un archivo RAR para extraer los datos con
+                                IA.</label>
+                            <input type="file" class="form-control" id="rar-file" name="rar-file" accept=".rar"
+                                required>
                         </div>
                         <button type="submit" class="btn btn-primary">Subir</button>
                     </form>
@@ -53,7 +55,8 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="nombre">Nombre:</label>
-                        <input type="text" name="nombre" id="nombre" class="form-control" value="{{ old('nombre') }}" placeholder="Nombre">
+                        <input type="text" name="nombre" id="nombre" class="form-control" value="{{ old('nombre') }}"
+                            placeholder="Nombre">
                         @error('nombre')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
@@ -62,7 +65,8 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="apellido_materno">Apellido Materno:</label>
-                        <input type="text" name="apellido_materno" id="apellido_materno" class="form-control" value="{{ old('apellido_materno') }}" placeholder="Apellido Materno">
+                        <input type="text" name="apellido_materno" id="apellido_materno" class="form-control"
+                            value="{{ old('apellido_materno') }}" placeholder="Apellido Materno">
                         @error('apellido_materno')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
@@ -73,7 +77,8 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="apellido_paterno">Apellido Paterno:</label>
-                        <input type="text" name="apellido_paterno" id="apellido_paterno" class="form-control" value="{{ old('apellido_paterno') }}" placeholder="Apellido Paterno">
+                        <input type="text" name="apellido_paterno" id="apellido_paterno" class="form-control"
+                            value="{{ old('apellido_paterno') }}" placeholder="Apellido Paterno">
                         @error('apellido_paterno')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
@@ -81,9 +86,10 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="email">Correo:</label>
-                        <input type="email" name="email" id="email" class="form-control" value="{{ old('email') }}" placeholder="Correo electrónico">
-                        @error('email')
+                        <label for="domicilio">Domicilio:</label>
+                        <input type="domicilio" name="domicilio" id="domicilio" class="form-control"
+                            value="{{ old('domicilio') }}" placeholder="Domicilio">
+                        @error('domicilio')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
@@ -92,18 +98,20 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="telefono">Teléfono:</label>
-                        <input type="text" name="telefono" id="telefono" class="form-control" value="{{ old('telefono') }}" maxlength="10" placeholder="Teléfono">
-                        @error('telefono')
+                        <label for="ciudad">Ciudad:</label>
+                        <input type="ciudad" name="ciudad" id="ciudad" class="form-control" value="{{ old('ciudad') }}"
+                            maxlength="10" placeholder="Ciudad">
+                        @error('ciudad')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="direccion">Dirección:</label>
-                        <input type="text" name="direccion" id="direccion" class="form-control" value="{{ old('direccion') }}" placeholder="Dirección">
-                        @error('direccion')
+                        <label for="estado">Estado:</label>
+                        <input type="text" name="estado" id="estado" class="form-control"
+                            value="{{ old('estado') }}" placeholder="Dirección">
+                        @error('estado')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
@@ -112,28 +120,95 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
-                        <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" class="form-control" value="{{ old('fecha_nacimiento') }}">
-                        @error('fecha_nacimiento')
+                        <label for="cpFiscal">Código Postal Fiscal <span>(Este dato debe coincidir con la constancia de
+                                situación fiscal, emitida por el SAT)</span>:</label>
+                        <input type="text" name="" id="cpFiscal" class="form-control"
+                            value="{{ old('cpFiscal') }}">
+                        @error('cpFiscal')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                        <input type="text" name="" id="fechaNacimiento" class="form-control"
+                            value="{{ old('fechaNacimiento') }}">
+                        @error('fechaNacimiento')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="rfc">RFC:</label>
+                        <input type="text" name="rfc" id="rfc" class="form-control"
+                            value="{{ old('rfc') }}">
+                        @error('rfc')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="puesto">Puesto:</label>
-                        <select name="id_rol" id="id_rol" class="form-control">
-                            <option value="">Seleccione un puesto:</option>
-                            <option value="1" {{ old('id_rol') == 1 ? 'selected' : '' }}>Sistemas</option>
-                            <option value="2" {{ old('id_rol') == 2 ? 'selected' : '' }}>Supervisor</option>
-                            <option value="3" {{ old('id_rol') == 3 ? 'selected' : '' }}>Guardia</option>
+                        <label for="curp">CURP:</label>
+                        <input type="text" name="curp" id="curp" class="form-control"
+                            value="{{ old('curp') }}">
+                        @error('curp')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label fof="edad">Edad:</label>
+                        <input type="text" name="edad" id="edad" class="form-control"
+                            value="{{ old('edad') }}">
+                        @error('edad')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="Correo">Correo:</label>
+                        <input type="text" name="correo" id="correo" class="form-control"
+                            value="{{ old('correo') }}">
+                        @error('correo')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="Estado Civil">Estado Civil:</label>
+                        <select name="estadoCivil" id="estadoCivil" class="form-control">
+                            <option value="soltero">Soltero</option>
+                            <option value="casado">Casado</option>
+                            <option value="divorciado">Divorciado</option>
+                            <option value="viudo">Viudo</option>
                         </select>
-                        @error('id_rol')
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="Nacionalidad">Nacionalidad:</label>
+                        <input type="text" name="nacionalidad" id="nacionalidad" class="form-control"
+                            value="{{ old('nacionalidad') }}">
+                        @error('nacionalidad')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
                 </div>
             </div>
+
             <div class="row mt-3">
                 <div class="col-md-12 d-flex justify-content-end">
                     <button type="submit" class="btn btn-primary me-2">Enviar</button>
