@@ -1,14 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Services\EmployesService;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Models\Employe;
+
 class EmployeController extends Controller
 {
-    public function __construct()
+    private $employesService;
+
+    public function __construct(EmployesService $employesService)
     {
-        // Aplica el middleware de autenticación a todas las rutas del controlador
+        $this->employesService = $employesService;
         $this->middleware('auth');
     }
 
@@ -36,5 +40,11 @@ class EmployeController extends Controller
     {
         // Retorna la vista para crear un nuevo empleado
         return view('employe.create-employe');
+    }
+
+    public function apiAllEmployes(): JsonResponse
+    {
+        $employes = $this->employesService->getAllEmployes();
+        return response()->json($employes['results']);
     }
 }
